@@ -4,7 +4,7 @@
         {{ __('Dashboard') }}
     </x-nav-link>
 
-    <!-- añadimos la navegación a proyectos -->
+    <!-- añadimos la navegación a los estudiantes -->
     <x-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.index')">
         {{ __('Proyectos') }}
     </x-nav-link>
