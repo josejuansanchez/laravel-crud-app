@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('students.layout')
 @section('content')
 <style>
     .container {
@@ -10,7 +10,7 @@
 </style>
 <div class="card push-top">
   <div class="card-header">
-    Edit & Update
+    Add User
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -22,26 +22,25 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('students.update', $student->id) }}">
+      <form method="post" action="{{ route('students.store') }}">
           <div class="mb-3">
               @csrf
-              @method('PATCH')
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" name="name" value="{{ $student->name }}"/>
+              <input type="text" class="form-control" name="name"/>
           </div>
           <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="email" value="{{ $student->email }}"/>
+              <input type="email" class="form-control" name="email"/>
           </div>
           <div class="mb-3">
               <label for="phone" class="form-label">Phone</label>
-              <input type="tel" class="form-control" name="phone" value="{{ $student->phone }}"/>
+              <input type="tel" class="form-control" name="phone"/>
           </div>
           <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="text" class="form-control" name="password" value="{{ $student->password }}"/>
+              <input type="text" class="form-control" name="password"/>
           </div>
-          <button type="submit" class="btn btn-primary">Update User</button>
+          <button type="submit" class="btn btn-primary">Create User</button>
       </form>
   </div>
 </div>

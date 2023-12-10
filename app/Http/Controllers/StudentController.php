@@ -12,7 +12,7 @@ class StudentController extends Controller
     public function index()
     {
         $student = Student::all();
-        return view('index', compact('student'));
+        return view('students.index', compact('student'));
     }
 
     /**
@@ -20,7 +20,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('students.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class StudentController extends Controller
     public function edit(string $id)
     {
         $student = Student::findOrFail($id);
-        return view('edit', compact('student'));
+        return view('students.edit', compact('student'));
     }
 
     /**
